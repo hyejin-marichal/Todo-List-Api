@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HyejinMarichal.TodoLists.Database.Postgres;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,7 @@ namespace HyejinMarichal.TodoLists.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HyejinMarichal.TodoLists.Api", Version = "v1" });
             });
+            services.AddTodoListDatabase(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
